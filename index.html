@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dani Olañeta — Portfolio RPG 3D</title>
+  <meta name="description" content="Currículum interactivo de Daniel Olañeta Fariña, Software Engineer: una isla RPG en 3D donde cada edificio guarda un capítulo de su CV.">
+  <meta name="theme-color" content="#101226">
+  <meta property="og:title" content="Dani Olañeta — Portfolio RPG 3D">
+  <meta property="og:description" content="Un currículum jugable: explora la Isla de Brigantia y descubre la experiencia, habilidades y proyectos de un Software Engineer.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101226'/%3E%3Cpath d='M32 8 52 32 32 56 12 32Z' fill='none' stroke='%23e8c66a' stroke-width='4'/%3E%3Cpath d='M32 20 42 32 32 44 22 32Z' fill='%23e8c66a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three/three.module.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="scene" aria-label="Mundo 3D: Isla de Brigantia"></canvas>
+  <div id="labels" aria-hidden="true"></div>
+
+  <!-- HUD -->
+  <div id="hud" hidden>
+    <div id="heroCard" class="frame">
+      <img id="heroPortrait" alt="" width="56" height="56">
+      <div class="hero-info">
+        <div class="hero-row"><span id="heroName">Dani</span><span id="heroLevel" class="badge"></span></div>
+        <div id="heroClass" class="hero-class"></div>
+        <div class="bar" title=""><span id="exploreFill"></span></div>
+        <div class="bar-caption"><span id="exploreLabel"></span><span id="explorePct"></span></div>
+      </div>
+    </div>
+
+    <section id="questLog" class="frame" aria-live="polite">
+      <button id="questToggle" class="quest-head" aria-expanded="true">
+        <span class="quest-kicker" id="questKicker"></span>
+        <span class="quest-title" id="questTitle"></span>
+      </button>
+      <ol id="questList"></ol>
+      <div id="questRelics" class="quest-relics"></div>
+    </section>
+
+    <div id="topRight">
+      <div class="hud-buttons">
+        <button id="btnLang" class="hud-btn lang" type="button"></button>
+        <button id="btnSound" class="hud-btn icon" type="button" aria-pressed="true"></button>
+        <button id="btnMusic" class="hud-btn icon" type="button" aria-pressed="true"></button>
+        <button id="btnNight" class="hud-btn icon" type="button" aria-pressed="false"></button>
+        <button id="btnMenu" class="hud-btn primary" type="button"></button>
+      </div>
+      <canvas id="minimap" class="frame" width="320" height="320" aria-hidden="true"></canvas>
+    </div>
+
+    <div id="zoneBanner" aria-live="polite"><span class="zone-name"></span><span class="zone-sub"></span></div>
+    <button id="prompt" type="button" hidden><kbd>E</kbd><span></span></button>
+    <div id="help"></div>
+
+    <div id="touch">
+      <div id="joy"><div id="joyKnob"></div></div>
+      <button id="btnAct" type="button" aria-label="Interactuar">A</button>
+    </div>
+  </div>
+
+  <!-- Diálogo -->
+  <div id="dialog" class="frame" hidden role="dialog" aria-live="polite">
+    <div id="dialogName"></div>
+    <p id="dialogText"></p>
+    <span id="dialogNext" aria-hidden="true">▼</span>
+  </div>
+
+  <!-- Ventana RPG (CV) -->
+  <div id="window" hidden>
+    <div class="win frame" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+      <header class="win-head">
+        <h2 id="winTitle"></h2>
+        <button id="winClose" class="win-close" type="button" aria-label="Cerrar">✕</button>
+      </header>
+      <nav id="winTabs" class="win-tabs" role="tablist"></nav>
+      <div id="winBody" class="win-body" tabindex="-1"></div>
+    </div>
+  </div>
+
+  <div id="toasts" aria-live="polite"></div>
+  <div id="fade"></div>
+
+  <!-- Pantalla de título -->
+  <div id="title">
+    <div class="title-inner">
+      <div class="title-kicker" id="titleKicker"></div>
+      <h1 class="title-name">Dani Olañeta</h1>
+      <div class="title-role"><span id="titleRole"></span><i></i><span id="titleGame"></span></div>
+      <div class="title-actions">
+        <button id="btnPlay" class="btn-main" type="button" disabled></button>
+        <button id="btnQuick" class="btn-ghost" type="button" disabled></button>
+      </div>
+      <div class="title-hint" id="titleHint"></div>
+    </div>
+    <button id="titleLang" class="hud-btn lang" type="button"></button>
+  </div>
+
+  <noscript>
+    <div class="noscript">
+      <h1>Daniel Olañeta Fariña — Software Engineer</h1>
+      <p>Este portfolio es un juego 3D y necesita JavaScript. Resumen: Engineer en NTT DATA, especializado en backend (Java, Spring, microservicios) e identidad digital (OAuth 2.0, OpenID4VC). Máster en Ingeniería Informática por la Universidade da Coruña.</p>
+      <p>Contacto: daniolanetafarina@gmail.com · <a href="https://github.com/sogekingdabest">github.com/sogekingdabest</a></p>
+    </div>
+  </noscript>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

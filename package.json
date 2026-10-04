@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-rpg-3d",
+  "version": "2.0.0",
+  "private": true,
+  "description": "CV interactivo de Daniel Olañeta Fariña: un RPG 3D low-poly hecho con Three.js, sin build.",
+  "type": "module",
+  "scripts": {
+    "start": "node tools/serve.mjs"
+  }
+}

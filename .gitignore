@@ -1,0 +1,7 @@
+# Excluir documentos personales y PDFs por ahora
+*.docx
+*.pdf
+
+# Configuración local de herramientas
+.claude/
+node_modules/
