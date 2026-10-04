@@ -507,13 +507,11 @@ body.dialog #prompt { display: none; }
 .facts dt { color: var(--muted); flex: none; }
 .facts dd { margin: 0; text-align: right; font-weight: 600; }
 .bio p { margin: 0 0 10px; }
-.abilities { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
-.ability { text-align: center; padding: 9px 4px 8px; border-radius: 10px; background: var(--card); border: 1px solid var(--card-line); }
-.ability .abbr { font-family: var(--display); font-weight: 700; font-size: 11.5px; letter-spacing: 0.14em; color: var(--gold); }
-.ability .score { font-family: var(--display); font-weight: 900; font-size: 27px; line-height: 1.1; color: #fff; }
-.ability .mod { display: inline-block; font-size: 11px; font-weight: 800; padding: 0 7px; border-radius: 99px; background: rgba(232, 198, 106, 0.18); color: var(--gold-hi); }
-.ability .nm { font-size: 12px; font-weight: 700; margin-top: 5px; }
-.ability .dt { font-size: 10.5px; color: var(--muted); line-height: 1.25; }
+.abilities { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ability { padding: 10px 12px 11px; border-radius: 10px; background: var(--card); border: 1px solid var(--card-line); }
+.ability .abbr { font-family: var(--display); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; color: var(--gold); }
+.ability .nm { font-family: var(--display); font-weight: 700; font-size: 15.5px; color: #fff; line-height: 1.25; }
+.ability .dt { font-size: 11.5px; color: var(--muted); line-height: 1.3; margin-top: 2px; }
 .traits { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .traits li { padding: 9px 12px; border-radius: 9px; background: var(--card); border: 1px solid var(--card-line); font-size: 13px; color: var(--muted); }
 .traits b { display: block; color: var(--text); font-size: 13.5px; }
@@ -542,17 +540,17 @@ body.dialog #prompt { display: none; }
 .levelup::before { content: '▲ '; }
 
 /* --- Habilidades --- */
-.schools { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 12px; }
-.school { padding: 14px 16px 12px; border-radius: 11px; background: var(--card); border: 1px solid var(--card-line); }
-.school header { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
-.school h4 { margin: 0; font-family: var(--display); font-size: 15.5px; color: var(--gold-hi); }
-.school header span { font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-.skill { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 10px; padding: 6px 0; border-top: 1px dashed rgba(255, 255, 255, 0.09); font-size: 13.5px; }
-.skill:first-of-type { border-top: 0; }
-.pips { display: flex; gap: 5px; align-items: center; }
-.pip { width: 9px; height: 9px; transform: rotate(45deg); border: 1.5px solid var(--gold-lo); border-radius: 1.5px; }
-.pip.on { background: linear-gradient(135deg, var(--gold-hi), var(--gold-lo)); border-color: var(--gold-hi); box-shadow: 0 0 6px rgba(232, 198, 106, 0.55); }
-.skill small { grid-column: 1 / -1; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: -3px; }
+.skillset { padding: 15px 18px 6px; border-radius: 11px; background: var(--card); border: 1px solid var(--card-line); margin-bottom: 14px; }
+.skillset header { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.skillset h4 { margin: 0; font-family: var(--display); font-size: 17px; color: var(--gold-hi); }
+.skillset header span { font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.skillset-note { margin: 3px 0 10px; color: var(--muted); font-size: 13px; }
+.skillset dl { margin: 0; }
+.skillset dl > div { display: grid; grid-template-columns: 168px 1fr; gap: 10px; align-items: start; padding: 9px 0; border-top: 1px dashed rgba(255, 255, 255, 0.09); }
+.skillset dt { font-weight: 600; font-size: 13.5px; padding-top: 3px; }
+.skillset dd { margin: 0; }
+.skillset dd .chips { margin-top: 0; }
+.skillset-1 .chip { background: rgba(111, 240, 192, 0.1); border-color: rgba(111, 240, 192, 0.3); color: #c9f7e6; }
 
 /* --- Formación --- */
 .scrolls { position: relative; padding-left: 26px; }
@@ -694,9 +692,6 @@ body.win-open #toasts { top: auto; bottom: 26px; right: 30px; }
 .noscript { position: fixed; inset: 0; z-index: 20; background: var(--ink); padding: 10vh 8vw; overflow: auto; }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1180px) {
-  .abilities { grid-template-columns: repeat(3, 1fr); }
-}
 @media (max-width: 900px) {
   #minimap { width: 118px; height: 118px; }
   #toasts { top: 182px; }
@@ -725,9 +720,10 @@ body.win-open #toasts { top: auto; bottom: 26px; right: 30px; }
   .win-body { padding: 16px 14px 28px; }
   .sheet { grid-template-columns: 1fr; gap: 16px; }
   .portrait { max-width: 190px; margin: 0 auto; }
-  .abilities { grid-template-columns: repeat(3, 1fr); }
+  .abilities { grid-template-columns: repeat(2, 1fr); }
   .traits { grid-template-columns: 1fr; }
-  .projects, .schools { grid-template-columns: 1fr; }
+  .projects { grid-template-columns: 1fr; }
+  .skillset dl > div { grid-template-columns: 1fr; gap: 6px; }
   .progress-row { grid-template-columns: 1fr 1fr 1fr; }
   .scroll .when { float: none; display: block; }
   #exploreLabel { display: none; }

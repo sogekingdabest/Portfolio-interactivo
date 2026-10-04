@@ -24,10 +24,6 @@ export const ICONS = {
 
 const chips = (list) => (list.length ? `<div class="chips">${list.map((x) => `<span class="chip">${esc(x)}</span>`).join('')}</div>` : '');
 const rank = (r) => `<span class="rank">${esc(state.t.ranks[r])}</span>`;
-const mod = (score) => {
-  const m = Math.floor((score - 10) / 2);
-  return (m >= 0 ? '+' : '') + m;
-};
 
 const render = {
   hero() {
@@ -55,8 +51,6 @@ const render = {
               .map(
                 (a) => `<div class="ability">
                   <div class="abbr">${esc(a.abbr)}</div>
-                  <div class="score">${a.score}</div>
-                  <span class="mod">${mod(a.score)}</span>
                   <div class="nm">${esc(a.name)}</div>
                   <div class="dt">${esc(a.detail)}</div>
                 </div>`
@@ -91,22 +85,15 @@ const render = {
 
   skills() {
     const { cv, t } = state;
-    return `<p class="intro">${esc(t.panel.skillsIntro)}</p><div class="schools">${cv.skills
+    return `<p class="intro">${esc(t.panel.skillsIntro)}</p>${cv.skills
       .map(
-        (s) => `<section class="school">
-          <header><h4>${esc(s.category)}</h4><span>${esc(s.school)}</span></header>
-          ${s.items
-            .map(
-              ([name, lvl]) => `<div class="skill">
-                <span>${esc(name)}</span>
-                <span class="pips" role="img" aria-label="${lvl}/5">${[1, 2, 3, 4, 5].map((i) => `<i class="pip${i <= lvl ? ' on' : ''}"></i>`).join('')}</span>
-                <small>${esc(cv.skillRanks[lvl])}</small>
-              </div>`
-            )
-            .join('')}
+        (g, i) => `<section class="skillset skillset-${i}">
+          <header><h4>${esc(g.group)}</h4><span>${esc(g.school)}</span></header>
+          <p class="skillset-note">${esc(g.note)}</p>
+          <dl>${g.sets.map(([name, items]) => `<div><dt>${esc(name)}</dt><dd>${chips(items)}</dd></div>`).join('')}</dl>
         </section>`
       )
-      .join('')}</div>`;
+      .join('')}`;
   },
 
   education() {

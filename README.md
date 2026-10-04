@@ -55,6 +55,7 @@ src/world/          terreno, edificios, personajes, iluminación y layout de la 
 src/game/           bucle de juego, HUD, diálogos y ventana del CV
 src/data/           contenido del CV y textos (ES / EN)
 vendor/three/       Three.js (MIT)
+assets/og.jpg       imagen de vista previa al compartir el enlace
 ```
 
 Todo el mundo se genera por código: no hay modelos, texturas ni ficheros de audio. La distribución de la isla (edificios, caminos, cofres) está en `src/world/layout.js`.

@@ -20,185 +20,147 @@ export default {
       ['Alignment', 'Lawful good: writes the tests']
     ],
     bio: [
-      'Computer engineer with over three years at NTT DATA, where I went from intern to Engineer. Backend is my home turf: Java, the Spring ecosystem, microservices and APIs.',
-      'I currently work on digital identity and authentication for the public sector: OAuth 2.0, OpenID4VC, verifiable credentials and a fair amount of cryptography.',
-      'Before that I was the technical lead on a social services platform: analysing, designing and breaking down features for the rest of the team.',
+      'Computer engineer with over three years at NTT DATA, where I went from intern to Software Engineer. Backend is my home turf: Java, the Spring ecosystem, microservices and APIs.',
+      'I currently run the technical side of a public-health CRM platform: technical analysis, incident resolution, development, and the configuration of its deployment on OKD with Helm.',
+      'Before that I worked on digital identity and authentication (OAuth 2.0, OpenID4VC, verifiable credentials and a fair amount of cryptography) and was the technical lead on a social services platform.',
       'Outside work I keep building: an archive for tabletop RPG campaigns with local AI, an Android app with on-device AI and, well, this island.'
     ],
     abilities: [
-      { abbr: 'STR', name: 'Backend', detail: 'Java · Spring', score: 18 },
-      { abbr: 'DEX', name: 'DevOps', detail: 'Docker · CI/CD · OpenShift', score: 14 },
-      { abbr: 'CON', name: 'Quality', detail: 'JUnit · Mockito', score: 16 },
-      { abbr: 'INT', name: 'Security', detail: 'OAuth · OpenID4VC · PKI', score: 17 },
-      { abbr: 'WIS', name: 'Analysis', detail: 'Technical design', score: 16 },
-      { abbr: 'CHA', name: 'Communication', detail: 'Mentoring & teamwork', score: 15 }
+      { abbr: 'STR', name: 'Backend', detail: 'Java · Spring' },
+      { abbr: 'DEX', name: 'DevOps', detail: 'Docker · OKD · Helm' },
+      { abbr: 'CON', name: 'Quality', detail: 'JUnit · Mockito' },
+      { abbr: 'INT', name: 'Security', detail: 'OAuth · OpenID4VC · PKI' },
+      { abbr: 'WIS', name: 'Analysis', detail: 'Technical analysis & design' },
+      { abbr: 'CHA', name: 'Communication', detail: 'Mentoring & teamwork' }
     ],
     passives: [
       ['Technical lead', 'Analyses, designs and breaks down features for the team to build.'],
-      ['Mentoring', 'Knowledge transfer and support for teammates.'],
+      ['Mentoring', 'Assigns and guides the work of junior engineers, and transfers knowledge.'],
       ['Clear communication', 'Translates between technical and business profiles.'],
       ['Problem solving', 'Debugs locally, reads the logs and gets to the root cause.'],
-      ['Continuous learning', 'From interoperability to social services and digital identity.'],
+      ['Continuous learning', 'From interoperability to social services, digital identity and healthcare.'],
       ['Agile teamwork', 'Sprints, requirement refinement and technical prioritisation.']
     ]
   },
 
   quests: [
     {
-      name: 'Digital identity & verifiable credentials',
-      rank: 'legendary',
-      role: 'Engineer',
+      name: 'Public-health CRM platform',
+      rank: 'epic',
+      role: 'Software Engineer · Technical lead',
       company: 'NTT DATA',
       client: 'Public sector',
-      period: 'Feb 2026 — present',
+      period: 'Sep 2026 — present',
       current: true,
+      summary:
+        'The CRM platform of a public health service, built on SuiteCRM and ehCOS, with ActiveMQ messaging.',
+      points: [
+        'Technical analysis of the platform and of new requirements.',
+        'Resolving the incidents that arrive through the support ticketing platform.',
+        'Development in Java 8 and PHP.',
+        "Configuration of the platform's deployment on OKD with Helm.",
+        'Assigning and following up tasks for a junior engineer.'
+      ],
+      tech: ['SuiteCRM', 'ehCOS', 'Java 8', 'PHP', 'ActiveMQ', 'OKD (OpenShift)', 'Helm', 'Kubernetes']
+    },
+    {
+      name: 'Digital identity & verifiable credentials',
+      rank: 'legendary',
+      role: 'Software Engineer',
+      company: 'NTT DATA',
+      client: 'Public sector',
+      period: 'Feb 2026 — Aug 2026',
       summary:
         "A digital identity platform for a public administration: citizens' identity, credentials and official documents, with secure interoperability across public bodies and European standards.",
       points: [
-        'Design and implementation of microservices and REST APIs in Java 17 and Python, with OpenAPI contracts and integration with internal and external services.',
-        'Authentication and interoperability components on OAuth 2.0, OpenID4VC and DPoP: issuing, refreshing, introspecting and validating tokens and credentials.',
-        'Cryptographic security: validation of JWT/JWS, COSE, X.509 certificates, PKIX trust chains, trust lists and revocation.',
-        'Verification flows for Wallet Instance Attestations, Key Attestations, SD-JWT VC, mDoc and Token Status Lists.',
-        'Unit and integration testing, backward compatibility and evolution of critical services following specifications and regulatory changes.'
+        'Microservices and REST APIs in Java 17 and Python, with OpenAPI contracts.',
+        'Authentication, and issuing and validating tokens and digital credentials, on OAuth 2.0 and OpenID4VC.',
+        'Cryptographic validation of signatures and certificates: trust chains and revocation.',
+        'Unit and integration testing on critical services.'
       ],
       tech: ['Java 17', 'Python 3', 'Spring Security', 'OAuth 2.0', 'OpenID4VC', 'DPoP', 'SD-JWT VC', 'mDoc', 'OpenAPI', 'JUnit']
     },
     {
       name: 'Social services platform',
       rank: 'epic',
-      role: 'Engineer · Technical lead',
+      role: 'Software Engineer · Technical lead',
       company: 'NTT DATA',
       client: 'Public sector',
       period: 'Nov 2024 — Jan 2026',
       summary: 'Social-services management applications for a public administration.',
-      levelUp: 'Level up: promoted to Engineer in March 2025.',
+      levelUp: 'Level up: promoted to Software Engineer in March 2025.',
       points: [
-        'Technical analysis, design and development of Java microservices with complex business logic and communication across multiple services.',
-        'API definition with Swagger and persistence in Oracle: table creation and DDL/DML scripts.',
-        'New frontend features and components in Angular.',
-        'Testing with JUnit and Mockito, and deployments with Jenkins on ROSA (Red Hat OpenShift Service on AWS).',
-        'Incident resolution by debugging locally and analysing logs on ROSA.',
-        'Technical lead for the application: analysis and design of features for the rest of the team, and knowledge transfer.'
+        'Technical analysis, design and development of Java microservices and their APIs.',
+        'Frontend in Angular and persistence in Oracle.',
+        'Testing with JUnit and Mockito, and deployments with Jenkins on OpenShift (ROSA).',
+        'Incident resolution.',
+        'Technical lead for the application: analysis and design of features for the rest of the team.'
       ],
       tech: ['Java 8', 'Spring Boot', 'Spring Data JPA', 'Angular', 'Oracle', 'H2', 'Jenkins', 'OpenShift (ROSA)', 'JUnit', 'Mockito']
     },
     {
       name: 'Interoperability portal',
       rank: 'rare',
-      role: 'Junior Engineer',
+      role: 'Junior Software Engineer',
       company: 'NTT DATA',
       client: 'Public sector',
       period: 'Jun 2023 — Aug 2024',
       summary: "A portal to manage and configure a public administration's interoperability node.",
       points: [
-        'Backend enhancements and maintenance in Java 8 and 11.',
-        'Definition and development of REST and SOAP APIs.',
-        'Automated unit tests with JUnit, Mockito and H2.',
-        'Analysis and documentation of new features, diagrams included.',
+        'Backend enhancements and maintenance in Java 8 and 11, with REST and SOAP APIs.',
+        'Automated unit tests with JUnit and Mockito.',
+        'Analysis and documentation of new features.',
         'Python scripts to automate processes.',
-        'User support through a ticketing platform and email.'
+        'User support.'
       ],
       tech: ['Java 7 / 8 / 11', 'Spring', 'Hibernate', 'Oracle', 'SQL', 'Docker', 'Python 3', 'JUnit', 'Mockito']
     },
     {
-      name: 'Internship at NTT DATA',
+      name: 'Internships',
       rank: 'common',
-      role: 'Intern',
-      company: 'NTT DATA',
-      client: 'Public sector',
-      period: 'Feb 2023 — May 2023',
-      summary: 'First steps on the interoperability portal backend: APIs, tests and bug fixing in Java.',
-      levelUp: 'Quest complete: hired as Junior Engineer in June 2023.',
-      points: [],
-      tech: ['Java', 'Spring', 'Hibernate', 'Oracle']
-    },
-    {
-      name: 'Internship at Denodo',
-      rank: 'common',
-      role: 'Intern',
-      company: 'Denodo',
+      role: 'Software Engineering Intern',
+      company: 'NTT DATA · Denodo',
       client: '',
-      period: 'Sep 2021 — Dec 2021',
-      summary: 'Internship during my degree at Denodo, a data virtualisation company, in A Coruña.',
-      points: [],
-      tech: []
+      period: '2021 — 2023',
+      summary: 'Two internships before joining NTT DATA.',
+      levelUp: 'Quest complete: hired as Junior Software Engineer in June 2023.',
+      points: [
+        'NTT DATA (Feb — May 2023): backend of the interoperability portal: APIs, tests and bug fixing in Java.',
+        'Denodo (Sep — Dec 2021): internship during my degree at a data virtualisation company.'
+      ],
+      tech: ['Java', 'Spring', 'Hibernate', 'Oracle']
     }
   ],
 
+  // No levels: skills are grouped by where I have used them.
   skills: [
     {
-      category: 'Backend',
+      group: 'In production',
       school: 'High magic',
-      items: [
-        ['Java (7 → 21)', 5],
-        ['Spring Boot · Security · Data JPA', 5],
-        ['REST / SOAP APIs · OpenAPI', 5],
-        ['Microservices', 4],
-        ['Hibernate / JPA', 4],
-        ['Python · FastAPI', 4]
+      note: 'What I use or have used on professional projects.',
+      sets: [
+        ['Backend', ['Java (7 → 17)', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'Hibernate / JPA', 'REST & SOAP APIs', 'OpenAPI / Swagger', 'Microservices', 'Python', 'PHP · SuiteCRM', 'ActiveMQ']],
+        ['Identity & security', ['OAuth 2.0', 'OpenID4VC', 'DPoP', 'JWT / JWS', 'COSE', 'X.509 · PKIX', 'SD-JWT VC', 'mDoc']],
+        ['Data', ['Oracle', 'SQL', 'H2']],
+        ['DevOps', ['Docker', 'Jenkins', 'OpenShift (OKD / ROSA)', 'Kubernetes', 'Helm', 'Git']],
+        ['Frontend', ['Angular', 'TypeScript']],
+        ['Quality & method', ['JUnit', 'Mockito', 'Agile / Scrum']]
       ]
     },
     {
-      category: 'Identity & security',
+      group: 'In personal projects',
       school: 'Arcane arts',
-      items: [
-        ['OAuth 2.0 · OpenID4VC · DPoP', 4],
-        ['JWT / JWS · COSE', 4],
-        ['X.509 · PKIX · revocation', 4],
-        ['SD-JWT VC · mDoc', 4],
-        ['Keycloak', 3]
-      ]
-    },
-    {
-      category: 'Data',
-      school: 'Alchemy',
-      items: [
-        ['Oracle · SQL', 4],
-        ['PostgreSQL · pgvector', 3],
-        ['H2', 3]
-      ]
-    },
-    {
-      category: 'DevOps',
-      school: 'Siege engineering',
-      items: [
-        ['Docker · Compose', 4],
-        ['Git · GitHub Actions', 4],
-        ['Jenkins · CI/CD', 3],
-        ['OpenShift / ROSA (AWS)', 3],
-        ['Kubernetes · Kustomize', 2]
-      ]
-    },
-    {
-      category: 'Frontend & mobile',
-      school: 'Illusion',
-      items: [
-        ['Angular', 3],
-        ['React · TypeScript', 3],
-        ['Kotlin · Jetpack Compose', 3]
-      ]
-    },
-    {
-      category: 'AI & machine learning',
-      school: 'Divination',
-      items: [
-        ['RAG · local LLMs (Ollama)', 3],
-        ['On-device AI (LiteRT, TFLite)', 3],
-        ['NLP (GLiNER, spaCy, Transformers)', 3],
-        ['Computer vision', 2]
-      ]
-    },
-    {
-      category: 'Quality & method',
-      school: 'Discipline',
-      items: [
-        ['JUnit · Mockito', 5],
-        ['Agile / Scrum', 4],
-        ['pytest · Playwright', 3]
+      note: 'What I have learned building on my own. The code is in the Forge.',
+      sets: [
+        ['Backend', ['Java 21', 'FastAPI', 'Keycloak']],
+        ['Data', ['PostgreSQL', 'pgvector']],
+        ['Frontend & mobile', ['React', 'Kotlin', 'Jetpack Compose']],
+        ['AI & machine learning', ['RAG', 'Local LLMs (Ollama)', 'On-device AI (LiteRT, TFLite)', 'NLP (GLiNER, spaCy)', 'Computer vision (TensorFlow, Keras)']],
+        ['DevOps', ['GitHub Actions', 'Docker Compose', 'Kustomize']],
+        ['Quality', ['pytest', 'Playwright']]
       ]
     }
   ],
-  skillRanks: ['', 'Novice', 'Apprentice', 'Proficient', 'Expert', 'Master'],
 
   education: [
     {
@@ -366,7 +328,7 @@ export default {
     linkedinLabel: 'linkedin.com/in/dani-olañeta-fariña',
     github: GH,
     githubLabel: 'github.com/sogekingdabest',
-    phone: '+34 666 219 440',
+    phone: '',
     cvPdf: '',
     note: 'Reply guaranteed before the next daily stand-up.'
   }

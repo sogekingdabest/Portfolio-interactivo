@@ -87,7 +87,7 @@ const es = {
     completed: 'Completada',
     client: 'Cliente',
     questsIntro: 'Misiones principales: mi experiencia profesional, de la más reciente a la primera.',
-    skillsIntro: 'Cada rombo es un nivel de maestría. Lo marcado con 5 es lo que uso a diario en producción.',
+    skillsIntro: 'Sin barras de nivel: el grimorio está ordenado por dónde he usado cada tecnología.',
     forgeIntro: 'Proyectos personales forjados fuera del horario de gremio. El código está en GitHub.',
     educationIntro: 'Los pergaminos que acreditan la formación del héroe.',
     contactIntro: '¿Tienes una misión para Dani? Elige canal.',
@@ -138,14 +138,14 @@ const es = {
     guideAgain: ['¿Otra vez por aquí? Toma, la ficha de personaje de Dani.'],
     guildmaster: [
       '¡Alto ahí! …Ah, vienes a consultar el registro. Soy el Maestre Roi, del Gremio de Ingenieros.',
-      'Aquí anotamos cada misión de Dani en NTT DATA. Entró de becario y hoy es Engineer.',
-      'La que tiene ahora entre manos es de rango LEGENDARIO: identidad digital y credenciales verificables para el sector público. Pasa y lee.'
+      'Aquí anotamos cada misión de Dani en NTT DATA. Entró de becario y hoy es Software Engineer.',
+      'Ahora lleva la parte técnica de una plataforma CRM de sanidad pública. Y antes completó una misión de rango LEGENDARIO: identidad digital para el sector público. Pasa y lee.'
     ],
     guildmasterAgain: ['El registro de misiones sigue abierto para ti.'],
     mage: [
       'Shhh… ¿lo oyes? Es el zumbido de la JVM. Soy la Archimaga Uxía, guardiana del Faro.',
       'Aquí arriba catalogamos los conjuros de Dani. Java y Spring son su magia mayor, pero últimamente estudia artes más arcanas: OAuth, OpenID4VC, criptografía…',
-      'Abre el grimorio. Los rombos dorados indican su maestría.'
+      'Abre el grimorio: está ordenado por dónde ha usado cada conjuro.'
     ],
     mageAgain: ['El grimorio no muerde. Casi nunca.'],
     scholar: [
@@ -254,14 +254,14 @@ const en = {
     contactTitle: 'Contact scroll',
     logTitle: 'Achievements & relics',
     background: 'Background',
-    abilities: 'Ability scores',
+    abilities: 'Attributes',
     passives: 'Passive traits',
     experience: (y, m) => `${y} ${y === 1 ? 'year' : 'years'}${m ? ` and ${m} ${m === 1 ? 'month' : 'months'}` : ''} of professional adventuring`,
     current: 'In progress',
     completed: 'Completed',
     client: 'Client',
     questsIntro: 'Main quests: my professional experience, most recent first.',
-    skillsIntro: 'Each diamond is a level of mastery. Anything at 5 is what I use daily in production.',
+    skillsIntro: 'No level bars: the grimoire is sorted by where I have used each technology.',
     forgeIntro: 'Personal projects forged outside guild hours. The code is on GitHub.',
     educationIntro: "The scrolls that certify the hero's training.",
     contactIntro: 'Got a quest for Dani? Pick a channel.',
@@ -312,14 +312,14 @@ const en = {
     guideAgain: ["Back again? Here, Dani's character sheet."],
     guildmaster: [
       "Halt! …Ah, you're here for the quest log. I'm Master Roi, of the Engineers' Guild.",
-      "We record every quest Dani has taken at NTT DATA. He joined as an intern and he's an Engineer today.",
-      "The one he's on now is LEGENDARY rank: digital identity and verifiable credentials for the public sector. Come in and read."
+      "We record every quest Dani has taken at NTT DATA. He joined as an intern and he's a Software Engineer today.",
+      'He now runs the technical side of a public-health CRM platform. Before that he completed a LEGENDARY quest: digital identity for the public sector. Come in and read.'
     ],
     guildmasterAgain: ['The quest log is still open for you.'],
     mage: [
       "Shhh… hear that? It's the hum of the JVM. I'm Archmage Uxía, keeper of the Lighthouse.",
       "Up here we catalogue Dani's spells. Java and Spring are his high magic, but lately he studies more arcane arts: OAuth, OpenID4VC, cryptography…",
-      'Open the grimoire. The golden diamonds show his mastery.'
+      "Open the grimoire: it's sorted by where he has cast each spell."
     ],
     mageAgain: ["The grimoire doesn't bite. Almost never."],
     scholar: [

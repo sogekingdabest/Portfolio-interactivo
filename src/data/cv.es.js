@@ -21,186 +21,148 @@ export default {
       ['Alineamiento', 'Legal bueno: escribe los tests']
     ],
     bio: [
-      'Ingeniero Informático con más de tres años en NTT DATA, donde he pasado de becario a Engineer. Mi terreno es el backend: Java, el ecosistema Spring, microservicios y APIs.',
-      'Ahora trabajo en identidad digital y autenticación para el sector público: OAuth 2.0, OpenID4VC, credenciales verificables y bastante criptografía.',
-      'Antes fui referente técnico en una plataforma de servicios sociales: análisis, diseño y descomposición de funcionalidades para el resto del equipo.',
+      'Ingeniero Informático con más de tres años en NTT DATA, donde he pasado de becario a Software Engineer. Mi terreno es el backend: Java, el ecosistema Spring, microservicios y APIs.',
+      'Ahora llevo la parte técnica de una plataforma CRM de sanidad pública: análisis técnicos, resolución de incidencias, desarrollo y la configuración de su despliegue en OKD con Helm.',
+      'Antes trabajé en identidad digital y autenticación (OAuth 2.0, OpenID4VC, credenciales verificables y bastante criptografía) y fui referente técnico en una plataforma de servicios sociales.',
       'Fuera del trabajo sigo construyendo: un archivo para campañas de rol con IA local, una app Android con IA en el dispositivo y, bueno, esta isla.'
     ],
-    // Atributos al estilo de una ficha de rol (puntuación sobre 20)
+    // Atributos al estilo de una ficha de rol, sin puntuaciones
     abilities: [
-      { abbr: 'FUE', name: 'Backend', detail: 'Java · Spring', score: 18 },
-      { abbr: 'DES', name: 'DevOps', detail: 'Docker · CI/CD · OpenShift', score: 14 },
-      { abbr: 'CON', name: 'Calidad', detail: 'JUnit · Mockito', score: 16 },
-      { abbr: 'INT', name: 'Seguridad', detail: 'OAuth · OpenID4VC · PKI', score: 17 },
-      { abbr: 'SAB', name: 'Análisis', detail: 'Diseño técnico', score: 16 },
-      { abbr: 'CAR', name: 'Comunicación', detail: 'Mentoría y equipo', score: 15 }
+      { abbr: 'FUE', name: 'Backend', detail: 'Java · Spring' },
+      { abbr: 'DES', name: 'DevOps', detail: 'Docker · OKD · Helm' },
+      { abbr: 'CON', name: 'Calidad', detail: 'JUnit · Mockito' },
+      { abbr: 'INT', name: 'Seguridad', detail: 'OAuth · OpenID4VC · PKI' },
+      { abbr: 'SAB', name: 'Análisis', detail: 'Análisis y diseño técnico' },
+      { abbr: 'CAR', name: 'Comunicación', detail: 'Mentoría y equipo' }
     ],
     passives: [
       ['Referente técnico', 'Analiza, diseña y descompone funcionalidades para que el equipo las ejecute.'],
-      ['Mentoría', 'Transferencia de conocimiento y apoyo a compañeros.'],
+      ['Mentoría', 'Reparte y guía el trabajo de perfiles junior y transfiere conocimiento.'],
       ['Comunicación clara', 'Traduce entre perfiles técnicos y funcionales.'],
       ['Resolución de problemas', 'Depura en local, lee logs y llega a la causa raíz.'],
-      ['Aprendizaje continuo', 'De la interoperabilidad a los servicios sociales y la identidad digital.'],
+      ['Aprendizaje continuo', 'De la interoperabilidad a los servicios sociales, la identidad digital y la sanidad.'],
       ['Equipo ágil', 'Sprints, refinamiento de requisitos y priorización técnica.']
     ]
   },
 
   quests: [
     {
-      name: 'Identidad digital y credenciales verificables',
-      rank: 'legendary',
-      role: 'Engineer',
+      name: 'Plataforma CRM de sanidad pública',
+      rank: 'epic',
+      role: 'Software Engineer · Responsable técnico',
       company: 'NTT DATA',
       client: 'Sector público',
-      period: 'feb 2026 — actualidad',
+      period: 'sep 2026 — actualidad',
       current: true,
+      summary:
+        'Plataforma CRM de un servicio público de salud, construida sobre SuiteCRM y ehCOS, con mensajería ActiveMQ.',
+      points: [
+        'Análisis técnicos de la plataforma y de las nuevas necesidades.',
+        'Resolución de las incidencias que llegan por la plataforma de tickets de soporte.',
+        'Desarrollo en Java 8 y PHP.',
+        'Configuración del despliegue de la plataforma en OKD con Helm.',
+        'Reparto y seguimiento de tareas de un perfil junior.'
+      ],
+      tech: ['SuiteCRM', 'ehCOS', 'Java 8', 'PHP', 'ActiveMQ', 'OKD (OpenShift)', 'Helm', 'Kubernetes']
+    },
+    {
+      name: 'Identidad digital y credenciales verificables',
+      rank: 'legendary',
+      role: 'Software Engineer',
+      company: 'NTT DATA',
+      client: 'Sector público',
+      period: 'feb 2026 — ago 2026',
       summary:
         'Plataforma de identidad digital para una administración pública: identidad, credenciales y documentación oficial del ciudadano, con interoperabilidad segura entre organismos y estándares europeos.',
       points: [
-        'Diseño e implementación de microservicios y APIs REST en Java 17 y Python, con contratos OpenAPI e integración con servicios internos y externos.',
-        'Componentes de autenticación e interoperabilidad sobre OAuth 2.0, OpenID4VC y DPoP: emisión, renovación, introspección y validación de tokens y credenciales.',
-        'Seguridad criptográfica: validación de JWT/JWS, COSE, certificados X.509, cadenas de confianza PKIX, listas de confianza y revocación.',
-        'Flujos de verificación para Wallet Instance Attestations, Key Attestations, SD-JWT VC, mDoc y Token Status Lists.',
-        'Pruebas unitarias y de integración, compatibilidad hacia atrás y evolución de servicios críticos según especificaciones y cambios normativos.'
+        'Microservicios y APIs REST en Java 17 y Python, con contratos OpenAPI.',
+        'Autenticación, emisión y validación de tokens y credenciales digitales sobre OAuth 2.0 y OpenID4VC.',
+        'Validación criptográfica de firmas y certificados: cadenas de confianza y revocación.',
+        'Pruebas unitarias y de integración en servicios críticos.'
       ],
       tech: ['Java 17', 'Python 3', 'Spring Security', 'OAuth 2.0', 'OpenID4VC', 'DPoP', 'SD-JWT VC', 'mDoc', 'OpenAPI', 'JUnit']
     },
     {
       name: 'Plataforma de servicios sociales',
       rank: 'epic',
-      role: 'Engineer · Referente técnico',
+      role: 'Software Engineer · Referente técnico',
       company: 'NTT DATA',
       client: 'Sector público',
       period: 'nov 2024 — ene 2026',
       summary: 'Aplicaciones de gestión de servicios sociales para una administración pública.',
-      levelUp: 'Subida de nivel: ascenso a Engineer en marzo de 2025.',
+      levelUp: 'Subida de nivel: ascenso a Software Engineer en marzo de 2025.',
       points: [
-        'Análisis técnico, diseño y desarrollo de microservicios Java con lógica de negocio compleja y comunicación entre múltiples servicios.',
-        'Definición de APIs con Swagger y persistencia en Oracle: creación de tablas y scripts DDL y DML.',
-        'Nuevas funcionalidades y componentes de frontend en Angular.',
-        'Pruebas con JUnit y Mockito, y despliegues con Jenkins en ROSA (Red Hat OpenShift Service on AWS).',
-        'Resolución de incidencias depurando en local y analizando logs en ROSA.',
-        'Referente técnico de la aplicación: análisis y diseño de funcionalidades para el resto del equipo y transferencia de conocimiento.'
+        'Análisis técnico, diseño y desarrollo de microservicios Java y de sus APIs.',
+        'Frontend en Angular y persistencia en Oracle.',
+        'Pruebas con JUnit y Mockito, y despliegues con Jenkins en OpenShift (ROSA).',
+        'Resolución de incidencias.',
+        'Referente técnico de la aplicación: análisis y diseño de funcionalidades para el resto del equipo.'
       ],
       tech: ['Java 8', 'Spring Boot', 'Spring Data JPA', 'Angular', 'Oracle', 'H2', 'Jenkins', 'OpenShift (ROSA)', 'JUnit', 'Mockito']
     },
     {
       name: 'Portal de interoperabilidad',
       rank: 'rare',
-      role: 'Junior Engineer',
+      role: 'Junior Software Engineer',
       company: 'NTT DATA',
       client: 'Sector público',
       period: 'jun 2023 — ago 2024',
       summary: 'Portal para gestionar y configurar el nodo de interoperabilidad de una administración pública.',
       points: [
-        'Evolutivos y mantenimiento del backend en Java 8 y 11.',
-        'Definición y desarrollo de APIs REST y SOAP.',
-        'Pruebas unitarias automatizadas con JUnit, Mockito y H2.',
-        'Análisis y documentación de nuevas funcionalidades, con sus diagramas.',
+        'Evolutivos y mantenimiento del backend en Java 8 y 11, con APIs REST y SOAP.',
+        'Pruebas unitarias automatizadas con JUnit y Mockito.',
+        'Análisis y documentación de nuevas funcionalidades.',
         'Scripts en Python para automatizar procesos.',
-        'Soporte a usuarios por plataforma de tickets y correo.'
+        'Soporte a usuarios.'
       ],
       tech: ['Java 7 / 8 / 11', 'Spring', 'Hibernate', 'Oracle', 'SQL', 'Docker', 'Python 3', 'JUnit', 'Mockito']
     },
     {
-      name: 'Prácticas en NTT DATA',
+      name: 'Prácticas',
       rank: 'common',
-      role: 'Becario',
-      company: 'NTT DATA',
-      client: 'Sector público',
-      period: 'feb 2023 — may 2023',
-      summary: 'Primeros pasos en el backend del portal de interoperabilidad: APIs, pruebas y corrección de errores en Java.',
-      levelUp: 'Misión superada: incorporación como Junior Engineer en junio de 2023.',
-      points: [],
-      tech: ['Java', 'Spring', 'Hibernate', 'Oracle']
-    },
-    {
-      name: 'Prácticas en Denodo',
-      rank: 'common',
-      role: 'Becario',
-      company: 'Denodo',
+      role: 'Software Engineer en prácticas',
+      company: 'NTT DATA · Denodo',
       client: '',
-      period: 'sep 2021 — dic 2021',
-      summary: 'Prácticas durante el grado en Denodo, empresa de virtualización de datos, en A Coruña.',
-      points: [],
-      tech: []
+      period: '2021 — 2023',
+      summary: 'Dos periodos de prácticas antes de incorporarme a NTT DATA.',
+      levelUp: 'Misión superada: incorporación como Junior Software Engineer en junio de 2023.',
+      points: [
+        'NTT DATA (feb — may 2023): backend del portal de interoperabilidad: APIs, pruebas y corrección de errores en Java.',
+        'Denodo (sep — dic 2021): prácticas durante el grado en una empresa de virtualización de datos.'
+      ],
+      tech: ['Java', 'Spring', 'Hibernate', 'Oracle']
     }
   ],
 
+  // Sin niveles: las habilidades se agrupan por dónde las he usado.
   skills: [
     {
-      category: 'Backend',
+      group: 'En producción',
       school: 'Magia mayor',
-      items: [
-        ['Java (7 → 21)', 5],
-        ['Spring Boot · Security · Data JPA', 5],
-        ['APIs REST / SOAP · OpenAPI', 5],
-        ['Microservicios', 4],
-        ['Hibernate / JPA', 4],
-        ['Python · FastAPI', 4]
+      note: 'Lo que uso o he usado en proyectos profesionales.',
+      sets: [
+        ['Backend', ['Java (7 → 17)', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'Hibernate / JPA', 'APIs REST y SOAP', 'OpenAPI / Swagger', 'Microservicios', 'Python', 'PHP · SuiteCRM', 'ActiveMQ']],
+        ['Identidad y seguridad', ['OAuth 2.0', 'OpenID4VC', 'DPoP', 'JWT / JWS', 'COSE', 'X.509 · PKIX', 'SD-JWT VC', 'mDoc']],
+        ['Datos', ['Oracle', 'SQL', 'H2']],
+        ['DevOps', ['Docker', 'Jenkins', 'OpenShift (OKD / ROSA)', 'Kubernetes', 'Helm', 'Git']],
+        ['Frontend', ['Angular', 'TypeScript']],
+        ['Calidad y método', ['JUnit', 'Mockito', 'Agile / Scrum']]
       ]
     },
     {
-      category: 'Identidad y seguridad',
+      group: 'En proyectos personales',
       school: 'Artes arcanas',
-      items: [
-        ['OAuth 2.0 · OpenID4VC · DPoP', 4],
-        ['JWT / JWS · COSE', 4],
-        ['X.509 · PKIX · revocación', 4],
-        ['SD-JWT VC · mDoc', 4],
-        ['Keycloak', 3]
-      ]
-    },
-    {
-      category: 'Datos',
-      school: 'Alquimia',
-      items: [
-        ['Oracle · SQL', 4],
-        ['PostgreSQL · pgvector', 3],
-        ['H2', 3]
-      ]
-    },
-    {
-      category: 'DevOps',
-      school: 'Ingeniería de asedio',
-      items: [
-        ['Docker · Compose', 4],
-        ['Git · GitHub Actions', 4],
-        ['Jenkins · CI/CD', 3],
-        ['OpenShift / ROSA (AWS)', 3],
-        ['Kubernetes · Kustomize', 2]
-      ]
-    },
-    {
-      category: 'Frontend y móvil',
-      school: 'Ilusionismo',
-      items: [
-        ['Angular', 3],
-        ['React · TypeScript', 3],
-        ['Kotlin · Jetpack Compose', 3]
-      ]
-    },
-    {
-      category: 'IA y machine learning',
-      school: 'Adivinación',
-      items: [
-        ['RAG · LLM locales (Ollama)', 3],
-        ['IA en el dispositivo (LiteRT, TFLite)', 3],
-        ['NLP (GLiNER, spaCy, Transformers)', 3],
-        ['Visión por computador', 2]
-      ]
-    },
-    {
-      category: 'Calidad y método',
-      school: 'Disciplina',
-      items: [
-        ['JUnit · Mockito', 5],
-        ['Agile / Scrum', 4],
-        ['pytest · Playwright', 3]
+      note: 'Lo que he aprendido construyendo por mi cuenta. El código está en la Forja.',
+      sets: [
+        ['Backend', ['Java 21', 'FastAPI', 'Keycloak']],
+        ['Datos', ['PostgreSQL', 'pgvector']],
+        ['Frontend y móvil', ['React', 'Kotlin', 'Jetpack Compose']],
+        ['IA y machine learning', ['RAG', 'LLM locales (Ollama)', 'IA en el dispositivo (LiteRT, TFLite)', 'NLP (GLiNER, spaCy)', 'Visión por computador (TensorFlow, Keras)']],
+        ['DevOps', ['GitHub Actions', 'Docker Compose', 'Kustomize']],
+        ['Calidad', ['pytest', 'Playwright']]
       ]
     }
   ],
-  skillRanks: ['', 'Novato', 'Aprendiz', 'Competente', 'Experto', 'Maestro'],
 
   education: [
     {
@@ -369,7 +331,7 @@ export default {
     linkedinLabel: 'linkedin.com/in/dani-olañeta-fariña',
     github: GH,
     githubLabel: 'github.com/sogekingdabest',
-    phone: '666 219 440', // déjalo vacío ('') para no mostrarlo
+    phone: '', // vacío = no se muestra; en una web pública solo atrae spam
     cvPdf: '', // ruta a un PDF público del CV; vacío = no se muestra el botón
     note: 'Respuesta garantizada antes del próximo daily.'
   }
